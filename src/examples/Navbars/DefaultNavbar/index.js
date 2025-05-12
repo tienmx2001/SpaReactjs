@@ -1,18 +1,4 @@
 /* eslint-disable no-param-reassign */
-/**
-=========================================================
-* Material Kit 2 React - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
 
 import { Fragment, useState, useEffect } from "react";
 
@@ -490,39 +476,34 @@ function DefaultNavbar({ brand, routes, transparent, light, action, sticky, rela
             {renderNavbarItems}
           </MKBox>
           <MKBox ml={{ xs: "auto", lg: 0 }}>
-            {action &&
-              (action.type === "internal" ? (
-                <MKButton
-                  component={Link}
-                  to={action.route}
-                  variant={
-                    action.color === "white" || action.color === "default"
-                      ? "contained"
-                      : "gradient"
-                  }
-                  color={action.color ? action.color : "info"}
-                  size="small"
-                >
-                  {action.label}
-                </MKButton>
-              ) : (
-                <MKButton
-                  component="a"
-                  href={action.route}
-                  target="_blank"
-                  rel="noreferrer"
-                  variant={
-                    action.color === "white" || action.color === "default"
-                      ? "contained"
-                      : "gradient"
-                  }
-                  color={action.color ? action.color : "info"}
-                  size="small"
-                >
-                  {action.label}
-                </MKButton>
-              ))}
-          </MKBox>
+          {action && (
+            <MKButton
+              component={
+                action.type === "internal"
+                  ? Link
+                  : action.type === "external" && action.route
+                  ? "a"
+                  : "button" // nếu dùng onClick mà không cần route thì thành button
+              }
+              {...(action.onClick
+                ? { onClick: action.onClick }
+                : action.type === "internal"
+                ? { to: action.route }
+                : { href: action.route, target: "_blank", rel: "noreferrer" })}
+              variant={
+                action.color === "white" || action.color === "default"
+                  ? "contained"
+                  : "gradient"
+              }
+              color={action.color || "info"}
+              size="small"
+            >
+              {action.label}
+            </MKButton>
+          )}
+        </MKBox>
+
+
           <MKBox
             display={{ xs: "inline-block", lg: "none" }}
             lineHeight={0}
@@ -571,7 +552,7 @@ DefaultNavbar.propTypes = {
     PropTypes.bool,
     PropTypes.shape({
       type: PropTypes.oneOf(["external", "internal"]).isRequired,
-      route: PropTypes.string.isRequired,
+      route: PropTypes.string,
       color: PropTypes.oneOf([
         "primary",
         "secondary",
@@ -585,6 +566,7 @@ DefaultNavbar.propTypes = {
         "white",
       ]),
       label: PropTypes.string.isRequired,
+      onClick: PropTypes.func, // thêm onClick vào để hỗ trợ sự kiện click
     }),
   ]),
   sticky: PropTypes.bool,

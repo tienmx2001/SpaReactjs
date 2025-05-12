@@ -13,29 +13,25 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-const imagesPrefix =
-  "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/pages";
+// const imagesPrefix =
+//   "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/pages";
+
+import khonggian1 from "assets/images/space/khonggian1.jpg";
+import khonggian2 from "assets/images/space/khonggian2.jpg";
+import khonggian3 from "assets/images/space/khonggian3.jpg";
+import khonggian4 from "assets/images/space/khonggian4.png";
 
 export default [
   {
-    image: `${imagesPrefix}/about-us.jpg`,
-    name: "About Us Page",
-    route: "/pages/landing-pages/about-us",
+    image: khonggian1,
   },
   {
-    image: `${imagesPrefix}/contact.jpg`,
-    name: "Contact Us Page",
-    route: "/pages/landing-pages/contact-us",
+    image: khonggian2,
   },
   {
-    image:
-      "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/account/signin-basic.jpg",
-    name: "Sign In Page",
-    route: "/pages/authentication/sign-in",
+    image:khonggian3,
   },
   {
-    image: `${imagesPrefix}/author.jpg`,
-    name: "Author Page",
-    route: "/pages/landing-pages/author",
+    image: khonggian4,
   },
 ];

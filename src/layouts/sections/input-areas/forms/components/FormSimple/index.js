@@ -25,6 +25,8 @@ import MKBox from "components/MKBox";
 import MKInput from "components/MKInput";
 import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
+import MKDatePicker from "components/MKDatePicker";
+
 
 function FormSimple() {
   const [checked, setChecked] = useState(true);
@@ -36,7 +38,7 @@ function FormSimple() {
       <Container>
         <Grid container item justifyContent="center" xs={10} lg={7} mx="auto" textAlign="center">
           <MKTypography variant="h3" mb={1}>
-            Contact Us
+            Đặt lịch Spa
           </MKTypography>
         </Grid>
         <Grid container item xs={12} lg={7} sx={{ mx: "auto" }}>
@@ -44,16 +46,28 @@ function FormSimple() {
             <MKBox p={3}>
               <Grid container spacing={3}>
                 <Grid item xs={12} md={6}>
-                  <MKInput variant="standard" label="First Name" fullWidth />
+                  <MKInput variant="standard" label="Họ và tên" fullWidth />
                 </Grid>
                 <Grid item xs={12} md={6}>
-                  <MKInput variant="standard" label="Last Name" fullWidth />
+                  <MKInput variant="standard" label="Số điện thoại" fullWidth />
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <MKInput variant="standard" type="email" label="Email" fullWidth />
+                  
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <MKDatePicker
+                    variant="standard"
+                    label="Date of Birth"
+                    fullWidth
+                    inputProps={{ placeholder: "DD/MM/YYYY" }}
+                    renderInput={(props) => <MKInput {...props} 
+                      InputLabelProps={{ shrink: true }} 
+                    />}
+                  />
                 </Grid>
                 <Grid item xs={12}>
-                  <MKInput variant="standard" type="email" label="Email Address" fullWidth />
-                </Grid>
-                <Grid item xs={12}>
-                  <MKInput variant="standard" label="Your Message" multiline fullWidth rows={6} />
+                  <MKInput variant="standard" label="Nhập yêu cầu" multiline fullWidth rows={6} />
                 </Grid>
                 <Grid item xs={12} alignItems="center" ml={-1}>
                   <Switch checked={checked} onChange={handleChecked} />
@@ -80,7 +94,7 @@ function FormSimple() {
               </Grid>
               <Grid container item justifyContent="center" xs={12} my={2}>
                 <MKButton type="submit" variant="gradient" color="dark" fullWidth>
-                  Send Message
+                  Đăng ký 
                 </MKButton>
               </Grid>
             </MKBox>

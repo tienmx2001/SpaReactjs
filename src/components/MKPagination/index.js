@@ -73,7 +73,7 @@ const MKPagination = forwardRef(
 MKPagination.defaultProps = {
   item: false,
   variant: "gradient",
-  color: "info",
+  color: "dark",
   size: "medium",
   active: false,
   placement: "right",

@@ -1,272 +1,59 @@
-/*
-=========================================================
-* Material Kit 2 React - v2.1.0
-=========================================================
+// pages/Presentation/sections/data/useServicesData.js
+import { useState, useEffect } from "react";
+import hieuquadieutrimun from "assets/images/hieuquadieutri/dieutrimun.jpg";
+import hieuquadieutrinam from "assets/images/hieuquadieutri/dieutrinam.jpg";
+import hieuquadieutriseo from "assets/images/hieuquadieutri/dieutriseo.jpg";
 
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+function useServicesData() {
+  const [data, setData] = useState([]);
 
-Coded by www.creative-tim.com
+  useEffect(() => {
+    const fetchServices = async () => {
+      try {
+        const response = await fetch("http://localhost:5000/api/services");
+        const services = await response.json();
 
- =========================================================
+        const mappedData = [
+          {
+            title: "Dịch vụ",
+            description: "Chúng tôi cung cấp dịch vụ chăm sóc sắc đẹp toàn diện",
+            items: services.map((service) => ({
+              service_id: service.service_id,
+              name: service.service_name,
+              image: `http://localhost:5000${service.service_image}`,
+              route: `/services/${service.service_id}`,
+            })),
+          },
+          {
+            title: "Hiệu quả điều trị",
+            description: "Các khách hàng đã trải nghiệm dịch vụ của chúng tôi",
+            items: [
+              {
+                image: hieuquadieutrimun,
+                route: "/sections/navigation/navbars",
+              },
+              {
+                image: hieuquadieutrinam,
+                route: "/sections/navigation/nav-tabs",
+              },
+              {
+                image: hieuquadieutriseo,
+                route: "/sections/navigation/pagination",
+              },
+            ],
+          },
+        ];
 
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
+        setData(mappedData);
+      } catch (error) {
+        console.error("Failed to fetch services:", error);
+      }
+    };
 
-const imagesPrefix =
-  "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/sections";
+    fetchServices();
+  }, []);
 
-export default [
-  {
-    title: "Design Blocks",
-    description: "A selection of 45 page sections that fit perfectly in any combination",
-    items: [
-      {
-        image: `${imagesPrefix}/headers.jpg`,
-        name: "Page Headers",
-        count: 10,
-        route: "/sections/page-sections/page-headers",
-      },
-      {
-        image: `${imagesPrefix}/features.jpg`,
-        name: "Features",
-        count: 14,
-        route: "/sections/page-sections/features",
-      },
-      {
-        image: `${imagesPrefix}/headers.jpg`,
-        name: "Page Headers",
-        count: 10,
-        route: "/sections/page-sections/page-headers",
-      },
-      {
-        image: `${imagesPrefix}/features.jpg`,
-        name: "Features",
-        count: 14,
-        route: "/sections/page-sections/features",
-      },
-      {
-        image: `${imagesPrefix}/headers.jpg`,
-        name: "Page Headers",
-        count: 10,
-        route: "/sections/page-sections/page-headers",
-      },
-      {
-        image: `${imagesPrefix}/features.jpg`,
-        name: "Features",
-        count: 14,
-        route: "/sections/page-sections/features",
-      },
-      {
-        image: `${imagesPrefix}/headers.jpg`,
-        name: "Page Headers",
-        count: 10,
-        route: "/sections/page-sections/page-headers",
-      },
-      {
-        image: `${imagesPrefix}/features.jpg`,
-        name: "Features",
-        count: 14,
-        route: "/sections/page-sections/features",
-      },
-      {
-        image: `${imagesPrefix}/headers.jpg`,
-        name: "Page Headers",
-        count: 10,
-        route: "/sections/page-sections/page-headers",
-      },
-      {
-        image: `${imagesPrefix}/features.jpg`,
-        name: "Features",
-        count: 14,
-        route: "/sections/page-sections/features",
-      },
-    ],
-  },
-  {
-    title: "Navigation",
-    description: "30+ components that will help go through the pages",
-    items: [
-      {
-        image: `${imagesPrefix}/navbars.jpg`,
-        name: "Navbars",
-        count: 4,
-        route: "/sections/navigation/navbars",
-      },
-      {
-        image: `${imagesPrefix}/nav-tabs.jpg`,
-        name: "Nav Tabs",
-        count: 2,
-        route: "/sections/navigation/nav-tabs",
-      },
-      {
-        image: `${imagesPrefix}/pagination.jpg`,
-        name: "Pagination",
-        count: 3,
-        route: "/sections/navigation/pagination",
-      },
-      {
-        image: `${imagesPrefix}/navbars.jpg`,
-        name: "Navbars",
-        count: 4,
-        route: "/sections/navigation/navbars",
-      },
-      {
-        image: `${imagesPrefix}/nav-tabs.jpg`,
-        name: "Nav Tabs",
-        count: 2,
-        route: "/sections/navigation/nav-tabs",
-      },
-      {
-        image: `${imagesPrefix}/pagination.jpg`,
-        name: "Pagination",
-        count: 3,
-        route: "/sections/navigation/pagination",
-      },
-      {
-        image: `${imagesPrefix}/navbars.jpg`,
-        name: "Navbars",
-        count: 4,
-        route: "/sections/navigation/navbars",
-      },
-      {
-        image: `${imagesPrefix}/nav-tabs.jpg`,
-        name: "Nav Tabs",
-        count: 2,
-        route: "/sections/navigation/nav-tabs",
-      },
-      {
-        image: `${imagesPrefix}/pagination.jpg`,
-        name: "Pagination",
-        count: 3,
-        route: "/sections/navigation/pagination",
-      },
-    ],
-  },
-  // {
-  //   title: "Input Areas",
-  //   description: "50+ elements that you need for text manipulation and insertion",
-  //   items: [
-  //     {
-  //       image: `${imagesPrefix}/newsletters.jpg`,
-  //       name: "Newsletters",
-  //       count: 6,
-  //       pro: true,
-  //     },
-  //     {
-  //       image: `${imagesPrefix}/contact-sections.jpg`,
-  //       name: "Contact Sections",
-  //       count: 8,
-  //       pro: true,
-  //     },
-  //     {
-  //       image: `${imagesPrefix}/forms.jpg`,
-  //       name: "Forms",
-  //       count: 3,
-  //       route: "/sections/input-areas/forms",
-  //     },
-  //     {
-  //       image: `${imagesPrefix}/inputs.jpg`,
-  //       name: "Inputs",
-  //       count: 6,
-  //       route: "/sections/input-areas/inputs",
-  //     },
-  //   ],
-  // },
-  // {
-  //   title: "Attention Catchers",
-  //   description: "20+ Fully coded components that popup from different places of the screen",
-  //   items: [
-  //     {
-  //       image: `${imagesPrefix}/alerts.jpg`,
-  //       name: "Alerts",
-  //       count: 4,
-  //       route: "/sections/attention-catchers/alerts",
-  //     },
-  //     {
-  //       image: `${imagesPrefix}/toasts.jpg`,
-  //       name: "Notifications",
-  //       count: 3,
-  //       pro: true,
-  //     },
-  //     {
-  //       image: `${imagesPrefix}/popovers.jpg`,
-  //       name: "Tooltips & Popovers",
-  //       count: 2,
-  //       route: "/sections/attention-catchers/tooltips-popovers",
-  //     },
-  //     {
-  //       image: `${imagesPrefix}/modals.jpg`,
-  //       name: "Modals",
-  //       count: 5,
-  //       route: "/sections/attention-catchers/modals",
-  //     },
-  //   ],
-  // },
-  // {
-  //   title: "Elements",
-  //   description: "80+ carefully crafted small elements that come with multiple colors and shapes",
-  //   items: [
-  //     {
-  //       image: `${imagesPrefix}/buttons.jpg`,
-  //       name: "Buttons",
-  //       count: 6,
-  //       route: "/sections/elements/buttons",
-  //     },
-  //     {
-  //       image: `${imagesPrefix}/avatars.jpg`,
-  //       name: "Avatars",
-  //       count: 2,
-  //       route: "/sections/elements/avatars",
-  //     },
-  //     {
-  //       image: `${imagesPrefix}/dropdowns.jpg`,
-  //       name: "Dropdowns",
-  //       count: 2,
-  //       route: "/sections/elements/dropdowns",
-  //     },
-  //     {
-  //       image: `${imagesPrefix}/switch.jpg`,
-  //       name: "Toggles",
-  //       count: 2,
-  //       route: "/sections/elements/toggles",
-  //     },
-  //     {
-  //       image: `${imagesPrefix}/social-buttons.jpg`,
-  //       name: "Social Buttons",
-  //       count: 2,
-  //       pro: true,
-  //     },
-  //     {
-  //       image: `${imagesPrefix}/breadcrumbs.jpg`,
-  //       name: "Breadcrumbs",
-  //       count: 1,
-  //       route: "/sections/elements/breadcrumbs",
-  //     },
-  //     {
-  //       image: `${imagesPrefix}/badges.jpg`,
-  //       name: "Badges",
-  //       count: 3,
-  //       route: "/sections/elements/badges",
-  //     },
-  //     {
-  //       image: `${imagesPrefix}/progress.jpg`,
-  //       name: "Progress Bars",
-  //       count: 4,
-  //       route: "/sections/elements/progress-bars",
-  //     },
-  //     {
-  //       image: `${imagesPrefix}/tables.jpg`,
-  //       name: "Tables",
-  //       count: 3,
-  //       pro: true,
-  //     },
-  //     {
-  //       image: `${imagesPrefix}/typography.jpg`,
-  //       name: "Typography",
-  //       count: 2,
-  //       route: "/sections/elements/typography",
-  //     },
-  //   ],
-  // },
-];
+  return data;
+}
+
+export default useServicesData;

@@ -23,22 +23,21 @@ import Icon from "@mui/material/Icon";
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
-function RotatingCardFront({ color, image, icon, title, description }) {
+function RotatingCardFront({ image, icon, title, description }) {
   return (
     <MKBox
       display="flex"
       justifyContent="center"
       alignContent="center"
       borderRadius="lg"
-      coloredShadow={color}
       width="100%"
       position="relative"
       zIndex={2}
       sx={{
-        backgroundImage: ({ palette: { gradients }, functions: { linearGradient, rgba } }) =>
+        backgroundImage: ({ functions: { linearGradient, rgba } }) =>
           `${linearGradient(
-            rgba(gradients[color] ? gradients[color].main : gradients.info.main, 0.85),
-            rgba(gradients[color] ? gradients[color].main : gradients.info.main, 0.85)
+            rgba(0, 0, 0, 0.85),
+            rgba(0, 0, 0, 0.85)
           )}, url(${image})`,
         backgroundSize: "cover",
         backfaceVisibility: "hidden",
@@ -63,22 +62,11 @@ function RotatingCardFront({ color, image, icon, title, description }) {
 
 // Setting default props for the RotatingCardFront
 RotatingCardFront.defaultProps = {
-  color: "info",
   icon: "",
 };
 
 // Typechecking props for the RotatingCardFront
 RotatingCardFront.propTypes = {
-  color: PropTypes.oneOf([
-    "primary",
-    "secondary",
-    "info",
-    "success",
-    "warning",
-    "error",
-    "dark",
-    "light",
-  ]),
   image: PropTypes.string.isRequired,
   icon: PropTypes.node,
   title: PropTypes.node.isRequired,

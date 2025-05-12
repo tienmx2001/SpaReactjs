@@ -13,6 +13,8 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
+import { useState } from "react";
+
 // @mui material components
 import Grid from "@mui/material/Grid";
 
@@ -25,15 +27,21 @@ import MKTypography from "components/MKTypography";
 // Material Kit 2 React examples
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "examples/Footers/DefaultFooter";
+import SimpleModal from "layouts/sections/attention-catchers/modals/components/SimpleModal";
+
 
 // Routes
 import routes from "routes";
 import footerRoutes from "footer.routes";
 
 // Image
-import bgImage from "assets/images/illustrations/illustration-reset.jpg";
+import bgImage from "assets/images/lobby.jpg";
+
 
 function ContactUs() {
+  const [showModal, setShowModal] = useState(false);
+  const handleOpenModal = () => setShowModal(true);
+  const handleCloseModal = () => setShowModal(false);
   return (
     <>
       <MKBox position="fixed" top="0.5rem" width="100%">
@@ -41,18 +49,19 @@ function ContactUs() {
           routes={routes}
           action={{
             type: "external",
-            route: "https://www.creative-tim.com/product/material-kit-react",
-            label: "free download",
-            color: "info",
+            onClick: () => handleOpenModal(),
+            label: "Đặt lịch ngay",
+            color: "primary",
           }}
         />
+        <SimpleModal open={showModal} onClose={handleCloseModal} />
       </MKBox>
-      <Grid container spacing={3} alignItems="center">
+      <Grid container spacing={3} alignItems="center" justifyContent="center">
         <Grid item xs={12} lg={6}>
           <MKBox
             display={{ xs: "none", lg: "flex" }}
             width="calc(100% - 2rem)"
-            height="calc(100vh - 2rem)"
+            height="calc(80vh - 2rem)"
             borderRadius="lg"
             ml={2}
             mt={2}
@@ -82,28 +91,28 @@ function ContactUs() {
           >
             <MKBox
               variant="gradient"
-              bgColor="info"
-              coloredShadow="info"
+              bgColor="primary"
+              coloredShadow="primary"
               borderRadius="lg"
               p={2}
               mx={2}
               mt={-3}
             >
               <MKTypography variant="h3" color="white">
-                Contact us
+                Liên hệ
               </MKTypography>
             </MKBox>
             <MKBox p={3}>
               <MKTypography variant="body2" color="text" mb={3}>
-                For further questions, including partnership opportunities, please email
-                hello@creative-tim.com or contact using our contact form.
+              Nếu có thêm câu hỏi, bao gồm cả cơ hội hợp tác, vui lòng gửi email đến
+              lienhe@spanhumo.vn hoặc liên hệ bằng biểu mẫu liên hệ của chúng tôi.
               </MKTypography>
               <MKBox width="100%" component="form" method="post" autoComplete="off">
                 <Grid container spacing={3}>
                   <Grid item xs={12} md={6}>
                     <MKInput
                       variant="standard"
-                      label="Full Name"
+                      label="Họ và tên"
                       InputLabelProps={{ shrink: true }}
                       fullWidth
                     />
@@ -120,8 +129,8 @@ function ContactUs() {
                   <Grid item xs={12}>
                     <MKInput
                       variant="standard"
-                      label="What can we help you?"
-                      placeholder="Describe your problem in at least 250 characters"
+                      label="Tôi có giúp gì cho bạn ?"
+                      placeholder="Mô tả "
                       InputLabelProps={{ shrink: true }}
                       multiline
                       fullWidth
@@ -130,8 +139,8 @@ function ContactUs() {
                   </Grid>
                 </Grid>
                 <Grid container item justifyContent="center" xs={12} mt={5} mb={2}>
-                  <MKButton type="submit" variant="gradient" color="info">
-                    Send Message
+                  <MKButton type="submit" variant="gradient" color="primary">
+                    Gửi yêu cầu
                   </MKButton>
                 </Grid>
               </MKBox>

@@ -30,29 +30,90 @@ import netflix from "assets/images/logos/gray-logos/logo-netflix.svg";
 import pinterest from "assets/images/logos/gray-logos/logo-pinterest.svg";
 import spotify from "assets/images/logos/gray-logos/logo-spotify.svg";
 import vodafone from "assets/images/logos/gray-logos/logo-vodafone.svg";
+import MKTypography from "components/MKTypography";
 
 function Featuring() {
   return (
     <MKBox component="section" pt={3} pb={8}>
       <Container>
-        <Grid container spacing={3} sx={{ mb: 12 }}>
-          <Grid item xs={6} md={4} lg={2}>
-            <MKBox component="img" src={coinbase} alt="coinbase" width="100%" opacity={0.7} />
+        <Grid container spacing={3} alignItems="center" justifyContent="center">
+          {/* Phần bên trái */}
+          <Grid item xs={12} md={6}>
+            <MKBox px={15} >
+              <MKTypography variant="h3" color="primary">Truyền thông nói về Như Mơ Spa ?</MKTypography>
+              <MKTypography
+                variant="button"
+                color="text"
+                fontWeight="regular"
+                mb={1}
+                pr={2}
+                sx={{ textAlign: "justify", letterSpacing: "0.8px" }}
+              >
+                Như Mơ Spa được vinh dự nhắc đến trên nhiều tờ báo, đài truyền hình uy tín với các chủ đề chia sẻ kiến thức trị mụn chuẩn y khoa, 
+                câu chuyện của nhiều bạn trẻ đã lấy lại tự tin và hạnh phúc sau hành trình điều trị mụn thành công tại 
+                Như Mơ Spa.
+              </MKTypography>
+            </MKBox>
           </Grid>
-          <Grid item xs={6} md={4} lg={2}>
-            <MKBox component="img" src={nasa} alt="nasa" width="100%" opacity={0.7} />
-          </Grid>
-          <Grid item xs={6} md={4} lg={2}>
-            <MKBox component="img" src={netflix} alt="netflix" width="100%" opacity={0.7} />
-          </Grid>
-          <Grid item xs={6} md={4} lg={2}>
-            <MKBox component="img" src={pinterest} alt="pinterest" width="100%" opacity={0.7} />
-          </Grid>
-          <Grid item xs={6} md={4} lg={2}>
-            <MKBox component="img" src={spotify} alt="spotify" width="100%" opacity={0.7} />
-          </Grid>
-          <Grid item xs={6} md={4} lg={2}>
-            <MKBox component="img" src={vodafone} alt="vodafone" width="100%" opacity={0.7} />
+
+          {/* Phần bên phải */}
+          <Grid item xs={12} md={6}>
+            <Grid container spacing={3} sx={{ mb: 12 }}>
+              <Grid item xs={6} md={4} lg={4}>
+                <MKBox
+                  component="img"
+                  src="https://thammysbeauty.vn/wp-content/uploads/2022/05/hinh1.svg"
+                  alt="coinbase"
+                  width="100%"
+                  opacity={0.7}
+                />
+              </Grid>
+              <Grid item xs={6} md={4} lg={4}>
+                <MKBox
+                  component="img"
+                  src="https://thammysbeauty.vn/wp-content/uploads/2022/05/hinh2.svg"
+                  alt="nasa"
+                  width="100%"
+                  opacity={0.7}
+                />
+              </Grid>
+              <Grid item xs={6} md={4} lg={4}>
+                <MKBox
+                  component="img"
+                  src="https://thammysbeauty.vn/wp-content/uploads/2022/05/Asset-4.svg"
+                  alt="netflix"
+                  width="100%"
+                  opacity={0.7}
+                />
+              </Grid>
+              <Grid item xs={6} md={4} lg={4}>
+                <MKBox
+                  component="img"
+                  src="https://thammysbeauty.vn/wp-content/uploads/2022/11/logo-eva-1.png"
+                  alt="pinterest"
+                  width="100%"
+                  opacity={0.7}
+                />
+              </Grid>
+              <Grid item xs={6} md={4} lg={4}>
+                <MKBox
+                  component="img"
+                  src="https://thammysbeauty.vn/wp-content/uploads/2022/05/Asset-11.svg"
+                  alt="spotify"
+                  width="100%"
+                  opacity={0.7}
+                />
+              </Grid>
+              <Grid item xs={6} md={4} lg={4}>
+                <MKBox
+                  component="img"
+                  src="https://thammysbeauty.vn/wp-content/uploads/2022/05/kenh-14.jpg.webp"
+                  alt="vodafone"
+                  width="100%"
+                  opacity={0.7}
+                />
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
         <Grid container justifyContent="center" sx={{ textAlign: "center" }}>
@@ -60,8 +121,8 @@ function Featuring() {
             <DefaultCounterCard
               count={5234}
               separator=","
-              title="Projects"
-              description="Of “high-performing” level are led by a certified project manager"
+              title="Khách hàng"
+              description="Đánh giá cao dịch vụ đâ sử dụng ở đây"
             />
           </Grid>
           <Grid item xs={12} md={3}>
@@ -69,16 +130,16 @@ function Featuring() {
               count={3400}
               separator=","
               suffix="+"
-              title="Hours"
-              description="That meets quality standards required by our users"
+              title="Ca"
+              description="Thực hiện điều trị mụn thành công"
             />
           </Grid>
           <Grid item xs={12} md={3}>
             <DefaultCounterCard
               count={24}
               suffix="/7"
-              title="Support"
-              description="Actively engage team members that finishes on time"
+              title="Hỗ trợ"
+              description="Chăm sóc tận tình 24/7 "
             />
           </Grid>
         </Grid>

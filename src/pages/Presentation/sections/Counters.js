@@ -31,27 +31,28 @@ function Counters() {
         <Grid container item xs={12} lg={9} sx={{ mx: "auto" }}>
           <Grid item xs={12} md={4}>
             <DefaultCounterCard
-              count={250}
+              count={50000}
               suffix="+"
-              title="Card Components"
-              description="From buttons, to inputs, navbars, alerts or cards, you are covered"
+              title="Khách hàng"
+              description="Chúng tôi đã phục vụ hơn 50.000 khách hàng trong suốt 10 năm qua"
             />
           </Grid>
           <Grid item xs={12} md={4} display="flex">
             <Divider orientation="vertical" sx={{ display: { xs: "none", md: "block" }, mx: 0 }} />
             <DefaultCounterCard
-              count={15}
+              count={"1000"}
               suffix="+"
-              title="Design Blocks"
-              description="Mix the sections, change the colors and unleash your creativity"
+              title="Nhân viên"
+              description="Chung tôi có hơn 1000 nhân viên làm việc tại các chi nhánh trên toàn quốc"
             />
             <Divider orientation="vertical" sx={{ display: { xs: "none", md: "block" }, ml: 0 }} />
           </Grid>
           <Grid item xs={12} md={4}>
             <DefaultCounterCard
-              count={11}
+              count={20}
+              suffix="+"
               title="Cơ sở"
-              description="We have 11 branches in Ho Chi Minh City and Hanoi"
+              description="Chúng tôi có hơn 20 cơ sở trên toàn quốc, phục vụ khách hàng mọi lúc mọi nơi"
             />
           </Grid>
         </Grid>

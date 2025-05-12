@@ -26,15 +26,14 @@ import formSimpleCode from "layouts/sections/input-areas/forms/components/FormSi
 function Forms() {
   return (
     <BaseLayout
-      title="Forms"
+     
       breadcrumb={[
-        { label: "Page Sections", route: "/sections/input-areas/forms" },
-        { label: "Forms" },
+        { label: "Đặt lịch khám", route: "/sections/input-areas/forms" },
+        { label: "Đặt lịch" },
       ]}
     >
-      <View title="Form Simple" code={formSimpleCode}>
         <FormSimple />
-      </View>
+      
     </BaseLayout>
   );
 }

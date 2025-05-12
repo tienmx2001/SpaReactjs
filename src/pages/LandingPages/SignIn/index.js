@@ -57,8 +57,8 @@ function SignInBasic() {
         action={{
           type: "external",
           route: "https://www.creative-tim.com/product/material-kit-react",
-          label: "free download",
-          color: "info",
+          label: "Đặt lịch ngay",
+          color: "primary",
         }}
         transparent
         light

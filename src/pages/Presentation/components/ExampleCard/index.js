@@ -1,17 +1,3 @@
-/*
-=========================================================
-* Material Kit 2 React - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
 
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
@@ -69,13 +55,16 @@ function ExampleCard({ image, name, count, pro, ...rest }) {
         </MKBox>
       )}
       <MKBox
-        component="img"
-        src={image}
-        alt={name}
-        width="100%"
-        my="auto"
-        opacity={pro ? 0.6 : 1}
-      />
+      component="img"
+      src={image}
+      alt={name}
+      width="100%"
+      height="200px" // hoặc chiều cao bạn muốn, ví dụ: 180px, 250px, v.v.
+      sx={{
+        objectFit: "cover",
+      }}
+      opacity={pro ? 0.6 : 1}
+    />
     </MKBox>
   );
 

@@ -21,10 +21,10 @@ import Icon from "@mui/material/Icon";
 // Material Kit 2 React components
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
+import bgImage from "assets/images/spabackground1.jpg";
 
 function BuiltByDevelopers() {
-  const bgImage =
-    "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/desktop.jpg";
+  
 
   return (
     <MKBox
@@ -36,8 +36,8 @@ function BuiltByDevelopers() {
       sx={{
         backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
           `${linearGradient(
-            rgba(gradients.dark.main, 0.8),
-            rgba(gradients.dark.state, 0.8)
+            rgba(gradients.dark.main, 0.4),
+            rgba(gradients.dark.state, 0.4)
           )}, url(${bgImage})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -46,15 +46,13 @@ function BuiltByDevelopers() {
       <Container>
         <Grid container item xs={12} lg={6} sx={{ ml: { xs: 0, lg: 6 } }}>
           <MKTypography variant="h4" color="white" fontWeight="bold">
-            Built by developers
+            Nâng tầm trải nghiệm
           </MKTypography>
           <MKTypography variant="h1" color="white" mb={1}>
-            Complex Documentation
+          Sức khỏe và sắc đẹp
           </MKTypography>
           <MKTypography variant="body1" color="white" opacity={0.8} mb={2}>
-            From colors, cards, typography to complex elements, you will find the full
-            documentation. Play with the utility classes and you will create unlimited combinations
-            for our components.
+            Đội ngũ chuyên gia hàng đầu trong ngành làm đẹp, với nhiều năm kinh nghiệm và kiến thức chuyên sâu về các liệu pháp làm đẹp và chăm sóc sức khỏe. Chúng tôi cam kết mang đến cho bạn những dịch vụ tốt nhất và sự hài lòng tuyệt đối với dịch vụ của mình.
           </MKTypography>
           <MKTypography
             component="a"
@@ -79,7 +77,7 @@ function BuiltByDevelopers() {
               },
             }}
           >
-            Read docs <Icon sx={{ fontWeight: "bold" }}>arrow_forward</Icon>
+            Xem thêm <Icon sx={{ fontWeight: "bold" }}>arrow_forward</Icon>
           </MKTypography>
         </Grid>
       </Container>

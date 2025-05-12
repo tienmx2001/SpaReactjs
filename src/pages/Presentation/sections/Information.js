@@ -27,8 +27,8 @@ import RotatingCardBack from "examples/Cards/RotatingCard/RotatingCardBack";
 import DefaultInfoCard from "examples/Cards/InfoCards/DefaultInfoCard";
 
 // Images
-import bgFront from "assets/images/rotating-card-bg-front.jpeg";
-import bgBack from "assets/images/rotating-card-bg-back.jpeg";
+import bgFront from "assets/images/presentation/gioithieu01.png";
+import bgBack from "assets/images/presentation/gioithieu03.jpg";
 
 function Information() {
   return (
@@ -42,21 +42,19 @@ function Information() {
                 icon="touch_app"
                 title={
                   <>
-                    Feel the
+                    Không gian
                     <br />
-                    Material Kit
+                  Sang trọng
                   </>
                 }
-                description="All the MUI components that you need in a development have been re-design with the new look."
               />
               <RotatingCardBack
                 image={bgBack}
-                title="Discover More"
-                description="You will save a lot of time going from prototyping to full-functional code because all elements are implemented."
+                title="Hiện đại và cổ điển"
                 action={{
                   type: "internal",
                   route: "/sections/page-sections/page-headers",
-                  label: "start with header",
+                  label: "Khám phá",
                 }}
               />
             </RotatingCard>
@@ -65,17 +63,16 @@ function Information() {
             <Grid container spacing={3}>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
-                  icon="content_copy"
-                  title="Full Documentation"
-                  description="Built by developers for developers. Check the foundation and you will find
-                    everything inside our documentation."
+                  icon="all_inbox"
+                  title="Dịch vụ trọn gói"
+                  description="Cung cấp nguồn khoáng sản tự nhiên, nước nóng thiên nhiên hoặc nước biển trong khuôn viên được sử dụng trong các liệu pháp trị liệu thủy sinh."
                 />
               </Grid>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
-                  icon="flip_to_front"
-                  title="MUI Ready"
-                  description="The world's most popular react components library for building user interfaces."
+                  icon="spa"
+                  title="Chăm sóc toàn thân"
+                  description="Chúng tôi cung cấp dịch vụ chăm sóc toàn thân với các sản phẩm tự nhiên, an toàn và hiệu quả."
                 />
               </Grid>
             </Grid>
@@ -83,15 +80,15 @@ function Information() {
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
                   icon="price_change"
-                  title="Save Time & Money"
-                  description="Creating your design from scratch with dedicated designers can be very expensive. Start with our Design System."
+                  title="Dịch vụ VIP"
+                  description="Dịch vụ chăm sóc sắc đẹp cao cấp với các sản phẩm tự nhiên, an toàn và hiệu quả."
                 />
               </Grid>
               <Grid item xs={12} md={6}>
                 <DefaultInfoCard
-                  icon="devices"
-                  title="Fully Responsive"
-                  description="Regardless of the screen size, the website content will naturally fit the given resolution."
+                  icon="face_retouching"
+                  title="Chăm sóc da mặt"
+                  description="Chúng tôi cung cấp dịch vụ chăm sóc da mặt với các sản phẩm tự nhiên, an toàn và hiệu quả."
                 />
               </Grid>
             </Grid>

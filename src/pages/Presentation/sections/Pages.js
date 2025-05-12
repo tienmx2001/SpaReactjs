@@ -54,17 +54,17 @@ function Pages() {
         >
           <MKBadge
             variant="contained"
-            color="info"
-            badgeContent="boost creativity"
+            color="primary"
+            badgeContent="Như Mơ Spa"
             container
             sx={{ mb: 2 }}
           />
           <MKTypography variant="h2" fontWeight="bold">
-            With our coded pages
+            Không gian và đánh giá khách hàng
           </MKTypography>
           <MKTypography variant="body1" color="text">
-            The easiest way to get started is to use one of our
-            <br /> pre-built example pages.
+            Chúng tôi đã tạo ra một không gian thư giãn và thoải mái cho khách hàng. Hãy cùng
+             nhìn lại những gì mà chúng tôi đã làm được.
           </MKTypography>
         </Grid>
       </Container>
@@ -78,11 +78,10 @@ function Pages() {
           <Grid item xs={12} lg={3}>
             <MKBox position="sticky" top="100px" pb={{ xs: 2, lg: 6 }}>
               <MKTypography variant="h3" fontWeight="bold" mb={1}>
-                Presentation Pages for Company, Landing Pages, Blogs and Support
+                Không gian làm đẹp
               </MKTypography>
               <MKTypography variant="body2" fontWeight="regular" color="secondary" mb={1} pr={2}>
-                These is just a small selection of the multiple possibitilies you have. Focus on the
-                business, not on the design.
+                Không gian của Như Mơ Spa được thiết kế với phong cách hiện đại, sang trọng và tinh tế.
               </MKTypography>
             </MKBox>
           </Grid>

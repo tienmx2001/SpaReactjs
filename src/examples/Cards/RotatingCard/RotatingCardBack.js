@@ -27,14 +27,13 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 import MKButton from "components/MKButton";
 
-function RotatingCard({ color, image, title, description, action }) {
+function RotatingCard({ image, title, description, action }) {
   return (
     <MKBox
       display="flex"
       justifyContent="center"
       alignItems="center"
       borderRadius="lg"
-      coloredShadow={color}
       position="absolute"
       width="100%"
       height="100%"
@@ -42,10 +41,10 @@ function RotatingCard({ color, image, title, description, action }) {
       left={0}
       zIndex={5}
       sx={{
-        backgroundImage: ({ palette: { gradients }, functions: { linearGradient, rgba } }) =>
+        backgroundImage: ({ functions: { linearGradient, rgba } }) =>
           `${linearGradient(
-            rgba(gradients[color] ? gradients[color].main : gradients.info.main, 0.85),
-            rgba(gradients[color] ? gradients[color].main : gradients.info.main, 0.85)
+            rgba(0, 0, 0, 0.85),
+            rgba(0, 0, 0, 0.85)
           )}, url(${image})`,
         backgroundSize: "cover",
         backfaceVisibility: "hidden",
@@ -74,7 +73,7 @@ function RotatingCard({ color, image, title, description, action }) {
                 {action.label}
               </MKButton>
             ) : (
-              <MKButton component={Link} to={action.route} color="white" size="small" fullWidth>
+              <MKButton component={Link} to={action.route} color="primary" size="small" fullWidth>
                 {action.label}
               </MKButton>
             )}
@@ -87,21 +86,11 @@ function RotatingCard({ color, image, title, description, action }) {
 
 // Setting default props for the RotatingCard
 RotatingCard.defaultProps = {
-  color: "info",
+  action: false,
 };
 
 // Typechecking props for the RotatingCard
 RotatingCard.propTypes = {
-  color: PropTypes.oneOf([
-    "primary",
-    "secondary",
-    "info",
-    "success",
-    "warning",
-    "error",
-    "dark",
-    "light",
-  ]),
   image: PropTypes.string.isRequired,
   title: PropTypes.node.isRequired,
   description: PropTypes.node.isRequired,

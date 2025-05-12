@@ -8,15 +8,16 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import MKTypography from "components/MKTypography";
 
 // Images
-import logoCT from "assets/images/logo-ct-dark.png";
+import logoSpa from "assets/images/spalogo.png";
 
 const date = new Date().getFullYear();
 
 export default {
   brand: {
-    name: "Material Kit 2",
-    image: logoCT,
+    name: "Spa Như Mơ",
+    image: logoSpa,
     route: "/",
+
   },
   socials: [
     {
@@ -28,64 +29,51 @@ export default {
       link: "https://twitter.com/creativetim",
     },
     {
-      icon: <GitHubIcon />,
-      link: "https://github.com/creativetimofficial",
-    },
-    {
       icon: <YouTubeIcon />,
       link: "https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w",
     },
   ],
   menus: [
     {
-      name: "company",
+      name: "VỀ CHÚNG TÔI",
       items: [
-        { name: "about us", href: "https://www.creative-tim.com/presentation" },
-        { name: "freebies", href: "https://www.creative-tim.com/templates/free" },
-        { name: "premium tools", href: "https://www.creative-tim.com/templates/premium" },
-        { name: "blog", href: "https://www.creative-tim.com/blog" },
+        { name: "Giới thiệu", href: "/about" },
+        { name: "Dịch vụ", href: "/services" },
+        { name: "Khách hàng nói gì", href: "/testimonials" },
+        { name: "Blog làm đẹp", href: "/blog" },
       ],
     },
     {
-      name: "resources",
+      name: "HỖ TRỢ",
       items: [
-        { name: "illustrations", href: "https://iradesign.io/" },
-        { name: "bits & snippets", href: "https://www.creative-tim.com/bits" },
-        { name: "affiliate program", href: "https://www.creative-tim.com/affiliates/new" },
-      ],
+        { name: "Liên hệ", href: "/contact" },
+        { name: "Câu hỏi thường gặp", href: "/faq" },
+        { name: "Chính sách bảo mật", href: "/privacy-policy" },      ],
     },
     {
-      name: "help & support",
+      name: "LIÊN KẾT NHANH",
       items: [
-        { name: "contact us", href: "https://www.creative-tim.com/contact-us" },
-        { name: "knowledge center", href: "https://www.creative-tim.com/knowledge-center" },
-        { name: "custom development", href: "https://services.creative-tim.com/" },
-        { name: "sponsorships", href: "https://www.creative-tim.com/sponsorships" },
+        { name: "Đặt lịch hẹn", href: "/booking" },
+        { name: "Khuyến mãi", href: "/promotions" },
+        { name: "Sản phẩm", href: "/products" },
       ],
     },
-    {
-      name: "legal",
-      items: [
-        { name: "terms & conditions", href: "https://www.creative-tim.com/terms" },
-        { name: "privacy policy", href: "https://www.creative-tim.com/privacy" },
-        { name: "licenses (EULA)", href: "https://www.creative-tim.com/license" },
-      ],
-    },
+   
   ],
   copyright: (
     <MKTypography variant="button" fontWeight="regular">
-      All rights reserved. Copyright &copy; {date} Material Kit by{" "}
-      <MKTypography
-        component="a"
-        href="https://www.creative-tim.com"
-        target="_blank"
-        rel="noreferrer"
-        variant="button"
-        fontWeight="regular"
-      >
-        Creative Tim
-      </MKTypography>
-      .
+    © {date}{" "}
+    <MKTypography
+      component="a"
+      href="/"
+      target="_blank"
+      rel="noreferrer"
+      variant="button"
+      fontWeight="regular"
+    >
+      Spa Như Mơ
     </MKTypography>
+    . Mọi quyền được bảo lưu.
+  </MKTypography>
   ),
 };

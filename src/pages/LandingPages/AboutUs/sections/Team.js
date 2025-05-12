@@ -1,103 +1,58 @@
-/*
-=========================================================
-* Material Kit 2 React - v2.1.0
-=========================================================
+import React from 'react';
+import { Box, Typography, Card, CardContent, Grid } from '@mui/material';
+import SpaIcon from '@mui/icons-material/Spa';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import RestaurantIcon from '@mui/icons-material/Restaurant';
+import TouchAppIcon from '@mui/icons-material/TouchApp';
+import MusicNoteIcon from '@mui/icons-material/MusicNote';
 
-* Product Page: https://www.creative-tim.com/product/material-kit-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+const senses = [
+  {
+    title: 'Khứu giác',
+    icon: <SpaIcon sx={{ fontSize: 40, color: '#e91e63' }} />,
+    desc: 'Mọi người thấy mùi thơm dịu của cây cỏ, tinh dầu tự nhiên du nhập khi vừa bước vào và bao phủ toàn bộ không gian các tầng của spa.'
+  },
+  {
+    title: 'Thị giác',
+    icon: <VisibilityIcon sx={{ fontSize: 40, color: '#e91e63' }} />,
+    desc: 'Cách trang trí tối giản cũng như ánh sáng dịu nhẹ đưa tinh thần ta vào sự tĩnh lặng & thư giãn thật sự.'
+  },
+  {
+    title: 'Vị giác',
+    icon: <RestaurantIcon sx={{ fontSize: 40, color: '#e91e63' }} />,
+    desc: 'Menu thức uống đặc biệt của Sen Spa không những thơm ngon mà còn rất tốt cho sức khỏe và làn da.'
+  },
+  {
+    title: 'Xúc giác',
+    icon: <TouchAppIcon sx={{ fontSize: 40, color: '#e91e63' }} />,
+    desc: 'Khách hàng được vuốt ve chăm sóc làn da sáng mịn và loại bỏ các điểm tắc nghẽn năng lượng giúp cơ thể bừng sức sống.'
+  },
+  {
+    title: 'Thính giác',
+    icon: <MusicNoteIcon sx={{ fontSize: 40, color: '#e91e63' }} />,
+    desc: 'Âm nhạc dịu dàng chuyên biệt dành cho spa giúp trị liệu tâm hồn, xua tan căng thẳng & phiền muộn mang đến giấc ngủ sâu.'
+  },
+];
 
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-// @mui material components
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-
-// Material Kit 2 React components
-import MKBox from "components/MKBox";
-import MKTypography from "components/MKTypography";
-
-// Material Kit 2 React examples
-import HorizontalTeamCard from "examples/Cards/TeamCards/HorizontalTeamCard";
-
-// Images
-import team1 from "assets/images/team-5.jpg";
-import team2 from "assets/images/bruce-mars.jpg";
-import team3 from "assets/images/ivana-squares.jpg";
-import team4 from "assets/images/ivana-square.jpg";
-
-function Team() {
+export default function SpaDefinitionSection() {
   return (
-    <MKBox
-      component="section"
-      variant="gradient"
-      bgColor="dark"
-      position="relative"
-      py={6}
-      px={{ xs: 2, lg: 0 }}
-      mx={-2}
-    >
-      <Container>
-        <Grid container>
-          <Grid item xs={12} md={8} sx={{ mb: 6 }}>
-            <MKTypography variant="h3" color="white">
-              The Executive Team
-            </MKTypography>
-            <MKTypography variant="body2" color="white" opacity={0.8}>
-              There&apos;s nothing I really wanted to do in life that I wasn&apos;t able to get good
-              at. That&apos;s my skill.
-            </MKTypography>
-          </Grid>
+    <Box className="bg-white py-12 md:px-0" id="spa-la-gi ">
+      <Box className="max-w-5xl mx-auto">
+   
+        <Grid container spacing={4}>
+          {senses.map((sense) => (
+            <Grid item xs={12} sm={6} md={4} key={sense.title}>
+              <Card className="h-full bg-[#faf9f9] shadow-sm hover:shadow-lg transition">
+                <CardContent className="flex flex-col items-center text-center">
+                  {sense.icon}
+                  <Typography variant="h6" className="mt-2 mb-1 text-[#91496c] font-semibold">{sense.title}</Typography>
+                  <Typography variant="body2">{sense.desc}</Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
         </Grid>
-        <Grid container spacing={3}>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <HorizontalTeamCard
-                image={team1}
-                name="Emma Roberts"
-                position={{ color: "info", label: "UI Designer" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={1}>
-              <HorizontalTeamCard
-                image={team2}
-                name="William Pearce"
-                position={{ color: "info", label: "Boss" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={{ xs: 1, lg: 0 }}>
-              <HorizontalTeamCard
-                image={team3}
-                name="Ivana Flow"
-                position={{ color: "info", label: "Athlete" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
-              />
-            </MKBox>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <MKBox mb={{ xs: 1, lg: 0 }}>
-              <HorizontalTeamCard
-                image={team4}
-                name="Marquez Garcia"
-                position={{ color: "info", label: "JS Developer" }}
-                description="Artist is a term applied to a person who engages in an activity deemed to be an art."
-              />
-            </MKBox>
-          </Grid>
-        </Grid>
-      </Container>
-    </MKBox>
+      </Box>
+    </Box>
   );
 }
-
-export default Team;
