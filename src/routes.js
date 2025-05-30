@@ -57,6 +57,7 @@ import Pagination from "layouts/sections/navigation/pagination";
 import Inputs from "layouts/sections/input-areas/inputs";
 import Forms from "layouts/sections/input-areas/forms";
 import Training from "pages/LandingPages/Training";
+import Services from "pages/LandingPages/Services/services";
 
 // import Author from "layouts/pages/landing-pages/author";
 // import SignIn from "layouts/pages/authentication/sign-in";
@@ -98,14 +99,34 @@ const routes = [
         dropdown: true,
         collapse: [
           {
-            name: "điều trị nám",
-            route: "/news",
-            component: <News />,
+            name: "Điều trị nám",
+            route: "/services/1",
+            component: <Services/>
           },
           {
             name: "Điều trị mụn",
-            route: "/sections/page-sections/features",
-            component: <Features />,
+            route: "/services/1",
+            component: <Services/>
+          },
+          {
+            name: "Điều trị thâm",
+            route: "/services/1",
+            component: <Services/>
+          },
+          {
+            name: "Điều trị sẹo rỗ",
+            route: "/services/1",
+            component: <Services/>
+          },
+          {
+            name: "Điều trị tàn nhang",
+            route: "/services/1",
+            component: <Services/>
+          },
+          {
+            name: "Điều trị sắc tố",
+            route: "/services/1",
+            component: <Services/>
           },
         ],
       },
@@ -115,19 +136,24 @@ const routes = [
         dropdown: true,
         collapse: [
           {
-            name: "navbars",
-            route: "/sections/navigation/navbars",
-            component: <Navbars />,
+            name: "phun xăm thẩm mỹ",
+            route: "/services/1",
+            component: <Services/>
           },
           {
-            name: "nav tabs",
-            route: "/sections/navigation/nav-tabs",
-            component: <NavTabs />,
+            name: "trẻ hóa và se khít lỗ chân lông",
+            route: "/services/1",
+            component: <Services/>
           },
           {
-            name: "pagination",
-            route: "/sections/navigation/pagination",
-            component: <Pagination />,
+            name: "xóa xăm",
+            route: "/services/1",
+            component: <Services/>
+          },
+          {
+            name: "triệt lông ",
+            route: "/services/1",
+            component: <Services/>
           },
         ],
       },

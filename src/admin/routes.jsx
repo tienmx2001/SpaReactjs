@@ -56,12 +56,7 @@ export const routes = [
     title: "Hệ thống",
     layout: "dashboard",
     pages: [
-      {
-        icon: <ServerStackIcon {...icon} />,
-        name: "Thống kê",
-        path: "/sign-up",
-        element: <SignUp />,
-      },
+   
       {
         icon: <RectangleStackIcon {...icon} />,
         name: "Nhắc hẹn",

@@ -14,7 +14,7 @@ const date = new Date().getFullYear();
 
 export default {
   brand: {
-    name: "Spa Như Mơ",
+    name: "Spa Eden",
     image: logoSpa,
     route: "/",
 
@@ -71,7 +71,7 @@ export default {
       variant="button"
       fontWeight="regular"
     >
-      Spa Như Mơ
+      Spa Eden
     </MKTypography>
     . Mọi quyền được bảo lưu.
   </MKTypography>

@@ -77,7 +77,7 @@ function DesignBlocks() {
           <MKBadge
             variant="contained"
             color="primary"
-            badgeContent="Như Mơ Spa"
+            badgeContent="Eden Spa"
             container
             sx={{ mb: 2 }}
           />
@@ -85,7 +85,7 @@ function DesignBlocks() {
             Dịch vụ và hiệu quả điều trị
           </MKTypography>
           <MKTypography variant="body1" color="text">
-            Trải nghiệm không gian tinh tế, thư giãn với những dịch vụ cao cấp tại Như Mơ Spa
+            Trải nghiệm không gian tinh tế, thư giãn với những dịch vụ cao cấp tại Eden Spa
           </MKTypography>
         </Grid>
       </Container>

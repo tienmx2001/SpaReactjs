@@ -10,17 +10,17 @@ const timeline = [
   {
     year: '2006',
     img: 'https://senspa.com.vn/wp-content/uploads/2021/01/missaodai.jpg',
-    desc: 'Như Mơ Spa được mở thêm tại 21 Nguyễn Trung Ngạn, Q.1 gồm 3 tầng (9-10-11) trong tòa nhà Miss Aodai Building.'
+    desc: 'Eden Spa được mở thêm tại 21 Nguyễn Trung Ngạn, Q.1 gồm 3 tầng (9-10-11) trong tòa nhà Miss Aodai Building.'
   },
   {
     year: '2014',
     img: 'https://senspa.com.vn/wp-content/uploads/2021/01/đongu.jpg',
-    desc: 'Sáp nhập An Nam Spa & Như Mơ Spa vào tại địa điểm 26-28 Đông Du, Q.1 thành Như Mơ SPA'
+    desc: 'Sáp nhập An Nam Spa & EdenSpa vào tại địa điểm 26-28 Đông Du, Q.1 thành Eden SPA'
   },
   {
     year: '2019',
     img: 'https://ext.same-assets.com/1464168449/2346026195.jpeg',
-    desc: 'Như Mơ Spa mở rộng quy mô, nâng cấp dịch vụ, tiếp nối truyền thống chăm sóc sức khỏe và sắc đẹp.'
+    desc: 'Eden Spa mở rộng quy mô, nâng cấp dịch vụ, tiếp nối truyền thống chăm sóc sức khỏe và sắc đẹp.'
   }
 ];
 

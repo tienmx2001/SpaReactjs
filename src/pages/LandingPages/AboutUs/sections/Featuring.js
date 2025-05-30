@@ -40,7 +40,7 @@ function Featuring() {
           {/* Phần bên trái */}
           <Grid item xs={12} md={6}>
             <MKBox px={15} >
-              <MKTypography variant="h3" color="primary">Truyền thông nói về Như Mơ Spa ?</MKTypography>
+              <MKTypography variant="h3" color="primary">Truyền thông nói về Eden Spa ?</MKTypography>
               <MKTypography
                 variant="button"
                 color="text"
@@ -49,9 +49,9 @@ function Featuring() {
                 pr={2}
                 sx={{ textAlign: "justify", letterSpacing: "0.8px" }}
               >
-                Như Mơ Spa được vinh dự nhắc đến trên nhiều tờ báo, đài truyền hình uy tín với các chủ đề chia sẻ kiến thức trị mụn chuẩn y khoa, 
+                Eden Spa được vinh dự nhắc đến trên nhiều tờ báo, đài truyền hình uy tín với các chủ đề chia sẻ kiến thức trị mụn chuẩn y khoa, 
                 câu chuyện của nhiều bạn trẻ đã lấy lại tự tin và hạnh phúc sau hành trình điều trị mụn thành công tại 
-                Như Mơ Spa.
+                Eden Spa.
               </MKTypography>
             </MKBox>
           </Grid>

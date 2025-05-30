@@ -83,7 +83,7 @@ export function Navbar({ brandName, routes, action }) {
 }
 
 Navbar.defaultProps = {
-  brandName: "Spa Như Mơ",
+  brandName: "Spa Eden",
   action: (
     <a
       href="https://www.creative-tim.com/product/material-tailwind-dashboard-react"

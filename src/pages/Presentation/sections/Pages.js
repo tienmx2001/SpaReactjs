@@ -55,7 +55,7 @@ function Pages() {
           <MKBadge
             variant="contained"
             color="primary"
-            badgeContent="Như Mơ Spa"
+            badgeContent="Eden Spa"
             container
             sx={{ mb: 2 }}
           />
@@ -81,7 +81,7 @@ function Pages() {
                 Không gian làm đẹp
               </MKTypography>
               <MKTypography variant="body2" fontWeight="regular" color="secondary" mb={1} pr={2}>
-                Không gian của Như Mơ Spa được thiết kế với phong cách hiện đại, sang trọng và tinh tế.
+                Không gian của Eden Spa được thiết kế với phong cách hiện đại, sang trọng và tinh tế.
               </MKTypography>
             </MKBox>
           </Grid>

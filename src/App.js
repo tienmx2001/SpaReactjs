@@ -53,17 +53,13 @@ export default function App() {
   <Route
     path="/news/:id"
     element={
-      <PrivateRoute>
         <NewsPage />
-      </PrivateRoute>
     }
   />
   <Route
     path="/services/:id"
     element={
-      <PrivateRoute>
         <ServicesPage />
-      </PrivateRoute>
     }
   />
   <Route

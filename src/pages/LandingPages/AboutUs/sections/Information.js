@@ -41,13 +41,9 @@ function Information() {
             <Grid container justifyContent="flex-start" ml={5} px={8}>
                 <Typography variant="h2"  mb={2} color="primary" className="gap-2 font-thin ">
 
-                  Về Như Mơ Spa
+                  Về Eden Spa
                   <MKBox component="img" src={logo} className="w-32 h-16"/>
                 </Typography>
-          
-              
-                
-              
                 <Typography
                 variant="button"
                 fontWeight="regular"
@@ -57,7 +53,7 @@ function Information() {
                 sx={{ textAlign: "justify", letterSpacing: "0.8px" }}
               >
                 Gắn liền với vẻ đẹp của một loài hoa giản dị, chân chất, lãng mạn nhưng ý chí sống mãnh liệt, 
-                Spa Như Mơ được thiết kế và bài trí với phong cách mộc mạc, giản dị mang đậm tính chất truyền thống của 
+                Spa Eden được thiết kế và bài trí với phong cách mộc mạc, giản dị mang đậm tính chất truyền thống của 
                 Việt Nam.
               </Typography>
 
@@ -69,8 +65,8 @@ function Information() {
                 pr={2}
                 sx={{ textAlign: "justify", letterSpacing: "0.8px" }}
               >
-                Tọa lạc tại trung tâm TP.HCM nhưng Spa Như Mơ được tách biệt khỏi không khí ồn ào náo nhiệt , 
-                mở ra một không gian an tĩnh, nhẹ nhàng. Khách hàng đến với Spa Như Mơ sẽ được bước vào không gian sang trọng,
+                Tọa lạc tại trung tâm TP.HCM nhưng Spa Eden được tách biệt khỏi không khí ồn ào náo nhiệt , 
+                mở ra một không gian an tĩnh, nhẹ nhàng. Khách hàng đến với Spa Eden sẽ được bước vào không gian sang trọng,
                 đan xen giữa hiện đại và cổ điển, ẩn hiện hình ảnh những bông sen thanh thoát, 
                 dịu dàng tràn ngập trong cách bài trí tại đây.
               </Typography>
@@ -83,7 +79,7 @@ function Information() {
                 pr={2}
                 sx={{ textAlign: "justify", letterSpacing: "0.8px" }}
               >
-                Đến với Spa Như Mơ, bạn sẽ được trải nghiệm những dịch vụ chăm sóc sắc đẹp và sức khỏe hoàn hảo nhất. 
+                Đến với Spa Eden, bạn sẽ được trải nghiệm những dịch vụ chăm sóc sắc đẹp và sức khỏe hoàn hảo nhất. 
                 Đội ngũ nhân viên chuyên nghiệp, tận tình, chu đáo sẽ mang đến cho bạn những giây phút thư giãn tuyệt vời 
                 nhất.
               </Typography>

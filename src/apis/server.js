@@ -23,6 +23,12 @@ const uploadDir = path.join(__dirname, 'public/uploads');
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
 }
+// ========================== API ===============================
+
+app.use(cors({
+  origin: "http://localhost:3000",
+  credentials: true, // để gửi cookie qua request
+}));
 // ======================== MULTER UPLOAD ========================
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -42,12 +48,7 @@ app.post("/api/upload", upload.single("image"), (req, res) => {
   res.json({ url: filePath });
 });
 
-// ========================== API ===============================
 
-app.use(cors({
-  origin: "http://localhost:3000",
-  credentials: true, // để gửi cookie qua request
-}));
 
 const session = require('express-session');
 
@@ -726,19 +727,28 @@ cron.schedule("* * * * *", async () => {
 
     console.log("Số nhắc nhở cần gửi:", result.recordset.length);
 
-    for (const r of result.recordset) {
-      const subject = 'Nhắc nhở lịch hẹn tại Như Mơ Spa';
-      const text = `Xin chào ${r.full_name},\n\nĐây là nhắc nhở về cuộc hẹn của bạn vào lúc ${r.reminder_time}.\n\nTrân trọng,\nSpa Clinic`;
+     for (const r of result.recordset) {
+    const reminderTimeVN = new Date(r.reminder_time.getTime() + 7 * 60 * 60 * 1000)
+      .toLocaleString('vi-VN', {
+        hour: '2-digit',
+        minute: '2-digit',
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+      });
 
-      await sendReminderEmail(r.email, subject, text);
+    const subject = 'Nhắc nhở lịch hẹn tại Eden Spa';
+    const text = `Xin chào ${r.full_name},\n\nĐây là nhắc nhở về cuộc hẹn của bạn vào lúc ${reminderTimeVN}.\n\nTrân trọng,\nSpa Eden`;
 
-      await pool
-        .request()
-        .input('id', sql.Int, r.reminder_id)
-        .query(`UPDATE Reminders SET status = 'Sent' WHERE reminder_id = @id`);
+    await sendReminderEmail(r.email, subject, text);
 
-      console.log(`✅ Đã gửi nhắc nhở tới ${r.email}`);
-    }
+    await pool
+      .request()
+      .input('id', sql.Int, r.reminder_id)
+      .query(`UPDATE Reminders SET status = 'Sent' WHERE reminder_id = @id`);
+
+    console.log(`✅ Đã gửi nhắc nhở tới ${r.email}`);
+  }
   } catch (err) {
     console.error("❌ Lỗi trong cron job:", err.message);
   }
